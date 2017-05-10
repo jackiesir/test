@@ -41,3 +41,4 @@ for i,j in zip(a,b):
     z.append(i+j)
 print(z)
 
+print(sum(a))
