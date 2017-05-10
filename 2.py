@@ -9,6 +9,8 @@ def fb1(n):
 print(fb1(100))
 
 #斐波那契数列的实现二
+def fb2(n):
+    pass
 
 
 #zip函数测试
