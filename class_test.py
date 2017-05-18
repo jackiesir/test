@@ -236,3 +236,6 @@ class MyTimer():
         self.lasted=[]
         self.begin=0
         self.end=0
+
+#--------------------------------------
+
