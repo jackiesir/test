@@ -2,6 +2,8 @@ import cmath
 import matplotlib.pyplot as plt
 import numpy as np
 #将数据从文件读到列表data里面
+
+
 with open (r'd:\zrn\fmlazhurealimag2.s2p','r') as f:
     data=f.readlines()
 

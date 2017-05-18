@@ -75,7 +75,6 @@ for s in S_all:
     er3.append((R/k) ** 2)
     # print(ur2)
 
-
 #在当前绘图对象中画图，
 plt.plot(fre,er1,label='$er1$',color='red',linewidth=1)
 plt.plot(fre,er2,label='$er2$',color='blue',linewidth=1)
