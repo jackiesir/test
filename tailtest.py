@@ -2,7 +2,6 @@ import subprocess
 import re
 import os
 import datetime
-import time
 
 # 获取配置文件里面所有的域名，并保存在列表里面{'it.ynnu.edu.cn': {'10.80.7.1', '10.73.26.9'},'www.ynnu.edu.cn': {'10.80.7.1', '10.73.26.9'}}
 url_ip_count = {}
