@@ -74,7 +74,7 @@ for s in S_all:
         print(len(R_imag), R_imag, m)
         if R_imag[len(R_imag) - 1] < R_imag[len(R_imag) - 2]:
             m = m +1
- 
+
     ur1.append((Z/Z0)*(R/k))
     ur2.append(((Z/Z0) ** 2).real)
     er1.append(((Z0/Z)*(R/k)).real)
