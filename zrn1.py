@@ -28,15 +28,17 @@ ur2=[]
 er1=[]
 er2=[]
 er3=[]
+# R的虚部存放在一个字典里面
+R_imag = []
 
+m = 0
+d = 0.016
+right = 15
+L1 = (125 - right) / 1000 - d
+L2 = right / 1000
+L =d
 for s in S_all:
     fre.append(s['freq'])
-    d=0.016
-    right=15
-    L1=(125-right)/1000-d
-    L2=right/1000
-    L=d
-    m=0
     k= 1j*(2 * cmath.pi * s['freq']) / C
     # s11=s[11] * cmath.exp(2 * k * L1)
     # s21=s[21] * cmath.exp( -k * L)
@@ -65,9 +67,14 @@ for s in S_all:
     ZS1=(Z0 * (1- S11 ** 2 + S21 ** 2 ))/((1-S11) ** 2 - S21 ** 2 )
     ZS2=(Z0 * ((1+ S11) ** 2 - S21 ** 2 ))/ (1- S11 ** 2 + S21 ** 2 )
     Z= cmath.sqrt(ZS1 * ZS2)
-
     BR=cmath.sqrt(ZS2 / ZS1)
     R=((cmath.tanh(BR) ** -1) + (m*cmath.pi)*1j)/L
+    R_imag.append(R.imag)
+    if len(R_imag) > 1:
+        print(len(R_imag), R_imag, m)
+        if R_imag[len(R_imag) - 1] < R_imag[len(R_imag) - 2]:
+            m = m +1
+ 
     ur1.append((Z/Z0)*(R/k))
     ur2.append(((Z/Z0) ** 2).real)
     er1.append(((Z0/Z)*(R/k)).real)
