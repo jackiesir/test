@@ -1,7 +1,7 @@
 import cmath
-import math
 import matplotlib.pyplot as plt
-import numpy as np
+# 导入中文字体显示模块
+import pylab
 #将数据从文件读到列表data里面
 with open (r'd:\zrn\usomteflondbmag.s2p','r') as f:
     data=f.readlines()
@@ -88,14 +88,17 @@ plt.plot(fre,er2,label='$er2$',color='blue',linewidth=1)
 plt.plot(fre,ur2,label='$ur2$',color='green',linewidth=1)
 # plt.plot(fre,ur2,label='$ur2$',color='black',linewidth=1)
 
+# 定义显示的中文字体
+pylab.mpl.rcParams['font.sans-serif'] = ['SimHei']
+
 #x轴的文字
-plt.xlabel('frequent')
+plt.xlabel('fre频率')
 
 #y轴的文字
-plt.ylabel('Eps')
+plt.ylabel('Eps-Y轴')
 
 #图标的标题
-plt.title('Real Eps')
+plt.title('曲线图')
 
 #x轴的范围
 # plt.xlim(0,2)
@@ -106,9 +109,8 @@ plt.title('Real Eps')
 #显示图示
 plt.legend()
 
+# 保存图
+#plt.savefig(r'D:\zrn\RealEps.png',fmt='png',dpi=160)
+
 #显示图
 plt.show()
-
-#保存图
-#plt.savefig(r'd:\zrn\RealEps.jpg')
-
