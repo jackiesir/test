@@ -4,6 +4,8 @@ import json
 import bs4
 import re
 from bs4 import BeautifulSoup
+
+
 response=urllib.request.urlopen('http://www.ynnu.edu.cn')
 html=response.read()
 
