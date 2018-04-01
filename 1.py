@@ -1,4 +1,5 @@
-#####素数的方法一
+#!/usr/bin/python3
+# #####素数的方法一
 '''
 方法一使用传统的while循环来实现素数的查找
 '''
@@ -22,4 +23,3 @@ showMaxFactor((num))
 # x=int(input('请输入一个数：'))
 # y=[i for i in range(x//2,0,-1) if x%i==0]
 # print(y)
-

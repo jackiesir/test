@@ -1,7 +1,7 @@
-import math
-import cmath
-import numpy as np
-import pandas as pd
+# import math
+# import cmath
+# import numpy as np
+# import pandas as pd
 
 
 
@@ -117,41 +117,67 @@ import pandas as pd
 
 # a=-1+2j
 # print(abs(a))
-import sympy as spy
-def f(x):
-    return (x-3)**3 #''定义f(x) = (x-3）**3'''
 
-def fd(x):
-    # return 3*((x-3)**2)#''定义f'(x) = 3*((x-3）**2）
-    x=spy.Symbol('x')
-    return spy.diff(f(x),x)
-# f1=np.diff(f)
-
-
-def newtonMethod(n,assum):
-    time = n
-    x = assum
-    Next = 0
-    A = f(x)
-    # B = fd(x)
-    x=spy.Symbol('x')
-    B=spy.diff(f(x),x)
-    print('A = ' + str(A) + ',B = ' + str(B) + ',time = ' + str(time))
-    if f(x) == 0.0:
-        return time,x
-    else:
-        Next = (x - A/B)
-        print('Next x = '+ str(Next))
-    if A == f(Next):
-        print('Meet f(x) = 0,x = ' + str(Next))#''设置迭代跳出条件，同时输出满足f(x) = 0的x值'''
-
-    else:
-        return newtonMethod(n+1,Next)
-
-newtonMethod(0,4) #''设置从0开始计数，x0 = 4.0'''
+#
+#
+# import sympy as spy
+# def f(x):
+#     return (x-3)**3 #''定义f(x) = (x-3）**3'''
+#
+# def fd(x):
+#     # return 3*((x-3)**2)#''定义f'(x) = 3*((x-3）**2）
+#     x=spy.Symbol('x')
+#     return spy.diff(f(x),x)
+# # f1=np.diff(f)
+#
+#
+# def newtonMethod(n,assum):
+#     time = n
+#     x = assum
+#     Next = 0
+#     A = f(x)
+#     # B = fd(x)
+#     x=spy.Symbol('x')
+#     B=spy.diff(f(x),x)
+#     print('A = ' + str(A) + ',B = ' + str(B) + ',time = ' + str(time))
+#     if f(x) == 0.0:
+#         return time,x
+#     else:
+#         Next = (x - A/B)
+#         print('Next x = '+ str(Next))
+#     if A == f(Next):
+#         print('Meet f(x) = 0,x = ' + str(Next))#''设置迭代跳出条件，同时输出满足f(x) = 0的x值'''
+#
+#     else:
+#         return newtonMethod(n+1,Next)
+#
+# newtonMethod(0,4) #''设置从0开始计数，x0 = 4.0'''
 
 
 # y=spy.Symbol('x')
 # print(spy.diff(y**3+2*y,y))
+
+
+# #有四个数字：1、2、3、4，能组成多少个互不相同且无重复数字的三位数？各是多少？
+# totlecount=0
+# for i in range(1,5):
+#     for j in range(1,5):
+#         for k in range(1,5):
+#             if(i !=k) and (i !=j) and (j!=k):
+#                 totlecount+=1
+#                 print(totlecount,':',i,j,k)
+#
+#
+
+#
+def fib(max):
+    a,b=0,1
+    z=[]
+    while a<max:
+        print(a,end=' ')
+        a,b=b,a+b
+    return z
+
+fib(1000)
 
 
