@@ -169,15 +169,32 @@
 #
 #
 
+
+
+# def fib(max):
+#     a,b=0,1
+#     z=[]
+#     while a<max:
+#         print(a,end=' ')
+#         a,b=b,a+b
+#     return z
 #
-def fib(max):
-    a,b=0,1
-    z=[]
-    while a<max:
-        print(a,end=' ')
-        a,b=b,a+b
-    return z
-
-fib(1000)
+# fib(100000000000000000000000)
+import requests
+from bs4 import BeautifulSoup
 
 
+def getHTMLText(url):
+    try:
+        # User_agent = {'user-agent': 'Mozilla/5.0'}
+        r=requests.get(url, timeout=300)
+        r.raise_for_status()
+        r.encoding=r.apparent_encoding
+        return r.text
+    except:
+        print('失败')
+        return ''
+
+url='http://www.ynnu.edu.cn'
+
+print(getHTMLText(url))
