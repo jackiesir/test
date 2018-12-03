@@ -14,7 +14,7 @@ def showMaxFactor(num):
         print('%d是素数！' % num)
 
 num=int(input('请输入一个数：'))
-showMaxFactor((num))
+showMaxFactor(num)
 
 ##########素数的方法二
 # '''
