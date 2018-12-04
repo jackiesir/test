@@ -31,7 +31,7 @@ import cv2
 # 创建人脸检测的对象
 face_cascade = cv2.CascadeClassifier('/home/jackie/Pictures/haarcascade_frontalface_alt2.xml')
 # 创建眼睛检测的对象
-#eye_cascade = cv2.CascadeClassifier("../data/haarcascade_eye.xml")
+eye_cascade = cv2.CascadeClassifier("/home/jackie/Pictures/haarcascade_eye.xml")
 # 连接摄像头的对象 0表示摄像头的编号
 cap = cv2.VideoCapture(0)
 while True:
@@ -48,8 +48,9 @@ while True:
         # 把脸单独拿出来
         roi_gray = gray[y: y + h, x: x + w]
         # 在脸上检测眼睛   (40, 40)是设置最小尺寸，再小的部分会不检测
-        # for (ex, ey, ew, eh) in eyes:
-        #     cv2.rectangle(img, (x + ex, y + ey), (x + ex + ew, y + ey + eh), (0, 255, 0), 2)
+        eyes = eye_cascade.detectMultiScale(roi_gray, 1.03, 5, 0, (40, 40))
+        for (ex, ey, ew, eh) in eyes:
+            cv2.rectangle(img, (x + ex, y + ey), (x + ex + ew, y + ey + eh), (0, 255, 0), 2)
         #
 
     cv2.imshow('Capture',frame)
